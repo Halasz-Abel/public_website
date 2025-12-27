@@ -17,7 +17,7 @@ body {
 }
 
 .glass-text {
-     font-size: 48px;
+     font-size: 30px;
     font-weight: bold;
     color: rgba(255,255,255,0.85);
     text-shadow:
@@ -26,6 +26,8 @@ body {
         0 0 10px rgba(255,255,255,0.4),
         0 0 20px rgba(255,255,255,0.2);
     font-family: 'Arial', sans-serif;
+   
+   
 }
 
 
@@ -120,5 +122,6 @@ video {
         padding: 10px 0;
     }
 }
+
 
 
