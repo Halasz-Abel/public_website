@@ -1,19 +1,21 @@
-// EmailJS init
+// --- EmailJS inicializálása ---
 (function(){
     emailjs.init("2yToEUxVnvMUUb-E0"); // Public API Key
 })();
 
+// --- HTML elemek ---
 const video = document.getElementById("video");
 const startBtn = document.getElementById("startScan");
 const scanner = document.getElementById("scanner");
 const result = document.getElementById("result");
 
-let scanCount = 0; // számláló a QR-beolvasásokhoz
+let scanCount = 0; // QR beolvasások száma
 
 startBtn.addEventListener("click", async () => {
     scanner.style.display = "block";
 
     try {
+        // Kamera elindítása
         const stream = await navigator.mediaDevices.getUserMedia({
             video: { facingMode: "environment" }
         });
@@ -35,9 +37,11 @@ startBtn.addEventListener("click", async () => {
                     const scanned = code.data;
                     scanCount++;
                     result.textContent = `QR beolvasva (${scanCount}): ${scanned}`;
+                    console.log("QR beolvasva:", scanned);
 
-                    // Második beolvasáskor EmailJS küldés
+                    // --- Második beolvasásra EmailJS küldés ---
                     if (scanCount === 2) {
+                        console.log("Második beolvasás - email küldés indul...");
                         emailjs.send("service_r2l9yw2", "template_ldvc37d", {
                             from_name: "Hivatalos Rendszerüzenet Generátor",
                             from_email: "abelqkacqkac@gmail.com",
@@ -46,11 +50,14 @@ startBtn.addEventListener("click", async () => {
 Minden szombaton 10:00 és 10:15 között egy kis élményben lesz része. Kérjük, készítse fel magát a vidám pillanatokra! \n\nÜdvözlettel: A Hivatalos Rendszerüzenet Generátor`
                         }).then(
                             () => alert("Email elküldve a nagymamának!"),
-                            (error) => alert("Hiba az email küldésénél: " + error.text)
+                            (error) => {
+                                console.error("EmailJS hiba:", error);
+                                alert("Hiba az email küldésénél: " + error.text);
+                            }
                         );
                     }
 
-                    // Átirányítás, ha a QR kód a weboldallal egyezik
+                    // --- Átirányítás a weboldalhoz / Gmail app ---
                     const siteURL = "https://halasz-abel.github.io/public_website/";
                     if (scanned === siteURL) {
                         window.location.href = "googlegmail://"; // Gmail app megnyitása
@@ -58,11 +65,13 @@ Minden szombaton 10:00 és 10:15 között egy kis élményben lesz része. Kérj
                         window.location.href = scanned;
                     }
 
-                    // Videó leállítása
+                    // --- Videó leállítása ---
                     video.srcObject.getTracks().forEach(track => track.stop());
                     return;
                 }
             }
+
+            // Loop folytatása
             requestAnimationFrame(scanLoop);
         }
 
