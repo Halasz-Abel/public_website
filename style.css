@@ -16,6 +16,20 @@ body {
     position: relative;
 }
 
+.glass-text {
+    display: inline-block;           /* a padding-hoz szükséges */
+    padding: 10px 20px;              /* belső tér a szöveg körül */
+    border-radius: 12px;             /* lekerekített sarkok */
+    background: rgba(255, 255, 255, 0.2); /* átlátszó fehér */
+    backdrop-filter: blur(8px);      /* üveg hatás */
+    -webkit-backdrop-filter: blur(8px);
+    color: white;                    /* szöveg színe */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    font-size: 36px;
+}
+
+
 /* --------------------------
    Középre helyezett wrapper a gombhoz
 --------------------------- */
@@ -107,3 +121,4 @@ video {
         padding: 10px 0;
     }
 }
+
