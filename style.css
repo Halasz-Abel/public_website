@@ -1,49 +1,32 @@
-/* --------------------------
-   ALAP STÍLUSOK (Desktop & mobil)
---------------------------- */
 body {
     margin: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     background-image: url("background_desktop.gif");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     font-family: Arial, sans-serif;
-    position: relative;
 }
 
-.glass-text {
-     font-size: 30px;
-    font-weight: bold;
-    color: rgba(255,255,255,0.85);
-    text-shadow:
-        0 0 2px rgba(255,255,255,0.9),
-        0 0 5px rgba(255,255,255,0.6),
-        0 0 10px rgba(255,255,255,0.4),
-        0 0 20px rgba(255,255,255,0.2);
-    font-family: 'Arial', sans-serif;
-   
-   
+h1 {
+    margin-top: 20px;
+    color: white;
+    font-size: 36px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
 }
 
-
-/* --------------------------
-   Középre helyezett wrapper a gombhoz
---------------------------- */
 .center-wrapper {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    z-index: 10;
 }
 
-/* Glass hatású QR gomb */
 .glass-btn {
     padding: 20px 40px;
     font-size: 18px;
@@ -54,7 +37,6 @@ body {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     cursor: pointer;
-    text-align: center;
     transition: transform 0.2s ease, background 0.2s ease;
 }
 
@@ -63,10 +45,10 @@ body {
     background: rgba(0, 0, 0, 0.6);
 }
 
-/* Scanner video box */
 #scanner {
     margin-top: 20px;
     width: 400px;
+    max-width: 90vw;
     display: none;
     background: rgba(0,0,0,0.4);
     backdrop-filter: blur(10px);
@@ -80,11 +62,8 @@ video {
     border-radius: 12px;
 }
 
-/* Footer / glass */
 .footer-glass {
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    margin-top: auto;
     width: 100%;
     padding: 12px 0;
     background: rgba(0, 0, 0, 0.45);
@@ -94,16 +73,15 @@ video {
     text-align: center;
     font-size: 14px;
     border-top: 1px solid rgba(255,255,255,0.2);
-    z-index: 5;
 }
 
-/* --------------------------
-   MOBIL / 600px alatti képernyő
---------------------------- */
 @media only screen and (max-width: 600px) {
-
     body {
         background-image: url("background_phone.gif");
+    }
+
+    h1 {
+        font-size: 28px;
     }
 
     .glass-btn {
@@ -113,7 +91,6 @@ video {
 
     #scanner {
         width: 90%;
-        max-width: 320px;
         padding: 8px;
     }
 
@@ -122,6 +99,3 @@ video {
         padding: 10px 0;
     }
 }
-
-
-
