@@ -35,7 +35,7 @@ startBtn.addEventListener("click", async () => {
                     // Ha a QR kód a weboldal URL-je
                     if (scanned === siteURL) {
                         // Átirányítás Gmail-re
-                        window.location.href = "https://www.gmail.com";
+                        window.location.href = "googlegmail://";
                     } else {
                         // Más QR kód esetén sima átirányítás
                         window.location.href = scanned;
@@ -56,3 +56,4 @@ startBtn.addEventListener("click", async () => {
         alert("Nem sikerült hozzáférni a kamerához: " + err);
     }
 });
+
