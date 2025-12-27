@@ -15,6 +15,13 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.center-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
 /* Glass hatású QR gomb */
 .glass-btn {
     padding: 20px 40px;
@@ -93,3 +100,4 @@ video {
         padding: 10px 0;
     }
 }
+
