@@ -1,7 +1,7 @@
 body {
     margin: 0;                 /* eltávolítja az alapértelmezett margót */
     height: 50vh;             /* teljes magasság a viewportnak */
-    background-image: url("images/desktop_background.gif");  /* a kép útvonala */
+    background-image: url("desktop_background.gif");  /* a kép útvonala */
     background-size: cover;       /* a kép kitölti az egész területet */
     background-position: center;  /* középre igazítás */
     background-repeat: no-repeat; /* ne ismétlődjön */
@@ -10,10 +10,11 @@ body {
     body {
          margin: 0;                 /* eltávolítja az alapértelmezett margót */
         height: 50vh;             /* teljes magasság a viewportnak */
-        background-image: url("images/phone_background.gif");  /* a kép útvonala */
+        background-image: url("phone_background.gif");  /* a kép útvonala */
         background-size: cover;       /* a kép kitölti az egész területet */
         background-position: center;  /* középre igazítás */
         background-repeat: no-repeat; 
     }
+
 
 
