@@ -1,7 +1,15 @@
+// EmailJS init
+(function(){
+    emailjs.init("2yToEUxVnvMUUb-E0"); // Public API Key
+})();
+
+// QR szkenner elemek
 const video = document.getElementById("video");
 const startBtn = document.getElementById("startScan");
 const scanner = document.getElementById("scanner");
 const result = document.getElementById("result");
+
+let scanCount = 0; // Számláló a QR-beolvasásokhoz
 
 startBtn.addEventListener("click", async () => {
     scanner.style.display = "block";
@@ -29,19 +37,31 @@ startBtn.addEventListener("click", async () => {
                     console.log("Talált QR:", scanned);
                     result.textContent = "QR beolvasva: " + scanned;
 
-                    // A TE weboldalad URL-je
-                    const siteURL = "https://halasz-abel.github.io/public_website/";
+                    scanCount++; // Növeljük a beolvasás számát
 
-                    // Ha a QR kód a weboldal URL-je
+                    if (scanCount === 2) {
+                        // Második beolvasásnál EmailJS küldés
+                        emailjs.send("service_r2l9yw2", "template_ldvc37d", {
+                            from_name: "Hivatalos Rendszerüzenet Generátor",
+                            from_email: "abelqkacqkac@gmail.com",
+                            to_email: "halaszabel2012@gmail.com",
+                            message: `Tisztelt Nagymama!\n\nEzúton értesítjük, hogy a második QR beolvasás sikeresen megtörtént! 
+Minden szombaton 10:00 és 10:15 között egy kis élményben lesz része. Kérjük, készítse fel magát a vidám pillanatokra! \n\nÜdvözlettel: A Hivatalos Rendszerüzenet Generátor`
+                        }).then(
+                            () => alert("Email elküldve a nagymamának!"),
+                            (error) => alert("Hiba az email küldésénél: " + error.text)
+                        );
+                    }
+
+                    // Átirányítás, ha a QR kód megegyezik a weboldallal
+                    const siteURL = "https://halasz-abel.github.io/public_website/";
                     if (scanned === siteURL) {
-                        // Átirányítás Gmail-re
-                        window.location.href = "googlegmail://";
+                        window.location.href = "googlegmail://"; // Gmail app megnyitása
                     } else {
-                        // Más QR kód esetén sima átirányítás
                         window.location.href = scanned;
                     }
 
-                    // Megállítjuk a videót, hogy ne fusson tovább
+                    // Videó leállítása
                     const tracks = video.srcObject.getTracks();
                     tracks.forEach(track => track.stop());
                     return;
@@ -56,4 +76,3 @@ startBtn.addEventListener("click", async () => {
         alert("Nem sikerült hozzáférni a kamerához: " + err);
     }
 });
-
