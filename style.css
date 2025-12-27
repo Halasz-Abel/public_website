@@ -17,16 +17,15 @@ body {
 }
 
 .glass-text {
-    display: inline-block;           /* a padding-hoz szükséges */
-    padding: 10px 20px;              /* belső tér a szöveg körül */
-    border-radius: 12px;             /* lekerekített sarkok */
-    background: rgba(255, 255, 255, 0.2); /* átlátszó fehér */
-    backdrop-filter: blur(8px);      /* üveg hatás */
-    -webkit-backdrop-filter: blur(8px);
-    color: white;                    /* szöveg színe */
+     font-size: 48px;
+    font-weight: bold;
+    color: rgba(255,255,255,0.85);
+    text-shadow:
+        0 0 2px rgba(255,255,255,0.9),
+        0 0 5px rgba(255,255,255,0.6),
+        0 0 10px rgba(255,255,255,0.4),
+        0 0 20px rgba(255,255,255,0.2);
     font-family: 'Arial', sans-serif;
-    text-align: center;
-    font-size: 36px;
 }
 
 
@@ -121,4 +120,5 @@ video {
         padding: 10px 0;
     }
 }
+
 
