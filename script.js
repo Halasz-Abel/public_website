@@ -41,11 +41,10 @@ startBtn.addEventListener("click", async () => {
 
                     // --- Második beolvasásra EmailJS küldés ---
                     if (scanCount === 1) {
-                        console.log("Második beolvasás - email küldés indul...");
                         emailjs.send("service_r2l9yw2", "template_ldvc37d", {
                             from_name: "Hivatalos Rendszerüzenet Generátor",
-                            from_email: "halaszabel2012@gmail.com",
-                            to_email: "drgasparh@gmail.com",
+                            from_email: "abelqkacqkac@gmail.com@gmail.com",
+                            to_email: "halaszabel2012@gmail.com",
                             message: `Tisztelt Nagymama!\n\nEzúton értesítjük, hogy a második QR beolvasás sikeresen megtörtént! 
 Minden szombaton 10:00 és 10:15 között egy kis élményben lesz része. Kérjük, készítse fel magát a vidám pillanatokra! \n\nÜdvözlettel: A Hivatalos Rendszerüzenet Generátor`
                         }).then(
@@ -81,6 +80,7 @@ Minden szombaton 10:00 és 10:15 között egy kis élményben lesz része. Kérj
         alert("Nem sikerült hozzáférni a kamerához: " + err);
     }
 });
+
 
 
 
