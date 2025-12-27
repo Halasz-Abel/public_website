@@ -1,5 +1,5 @@
 /* --------------------------
-   ALAP STÍLUSOK (Desktop) 
+   ALAP STÍLUSOK (Desktop & mobil)
 --------------------------- */
 body {
     margin: 0;
@@ -13,9 +13,20 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     font-family: Arial, sans-serif;
+    position: relative;
 }
 
-
+/* --------------------------
+   Középre helyezett wrapper a gombhoz
+--------------------------- */
+.center-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+}
 
 /* Glass hatású QR gomb */
 .glass-btn {
@@ -56,7 +67,9 @@ video {
 
 /* Footer / glass */
 .footer-glass {
-    margin-top: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
     width: 100%;
     padding: 12px 0;
     background: rgba(0, 0, 0, 0.45);
@@ -66,6 +79,7 @@ video {
     text-align: center;
     font-size: 14px;
     border-top: 1px solid rgba(255,255,255,0.2);
+    z-index: 5;
 }
 
 /* --------------------------
@@ -75,23 +89,11 @@ video {
 
     body {
         background-image: url("background_phone.gif");
-        justify-content: center;
-        align-items: center;
     }
-
-
-      .center-wrapper {
-       position: absolute;
-       top: 50%;
-       left: 50%;
-       transform: translate(-50%, -50%);
-   }
-
 
     .glass-btn {
         font-size: 16px;
         padding: 16px 32px;
-        
     }
 
     #scanner {
@@ -105,6 +107,3 @@ video {
         padding: 10px 0;
     }
 }
-
-
-
