@@ -1,29 +1,42 @@
 body {
-    margin: 0;                 /* eltávolítja az alapértelmezett margót */
-    height: 100vh;             /* teljes magasság a viewportnak */
-    background-image: url("background_desktop.gif");  /* a kép útvonala */
-    background-size: cover;       /* a kép kitölti az egész területet */
-    background-position: center;  /* középre igazítás */
-    background-repeat: no-repeat; /* ne ismétlődjön */
+    margin: 0;
+    min-height: 100vh;
+    background-image: url("background_desktop.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    font-family: Arial, sans-serif;
 }
 
+/* Glass hatású alsó sáv */
+.footer-glass {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px 0;
+
+    background: rgba(0, 0, 0, 0.45);   /* fekete, átlátszó */
+    backdrop-filter: blur(10px);       /* glass blur */
+    -webkit-backdrop-filter: blur(10px);
+
+    color: white;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Mobil verzió */
 @media only screen and (max-width: 600px) {
     body {
-        margin: 0;                 /* eltávolítja az alapértelmezett margót */
-        height: 100vh;             /* teljes magasság a viewportnak */
-        background-image: url("background_phone.gif");  /* a kép útvonala */
-        background-size: cover;       /* a kép kitölti az egész területet */
-        background-position: center;  /* középre igazítás */
+        background-image: url("background_phone.gif");
+        background-size: cover;
+        background-position: center;
         background-repeat: no-repeat;
     }
 
-
-
-
-
-
-
-
-
-
-
+    .footer-glass {
+        font-size: 12px;
+        padding: 10px 0;
+    }
+}
