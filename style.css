@@ -1,52 +1,48 @@
+/* --------------------------
+   ALAP STÍLUSOK (Desktop) 
+--------------------------- */
 body {
     margin: 0;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-image: url("background_desktop.gif");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     font-family: Arial, sans-serif;
-
-    display: flex;
-    flex-direction: column;
 }
 
-/* Glass footer – DESKTOP */
-.footer-glass {
-    margin-top: auto;
-
-    width: 100%;
-    padding: 12px 0;
-
+/* Glass hatású QR gomb */
+.glass-btn {
+    padding: 20px 40px;
+    font-size: 18px;
+    border: none;
+    border-radius: 16px;
+    color: white;
     background: rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-
-    color: white;
+    cursor: pointer;
     text-align: center;
-    font-size: 14px;
+    transition: transform 0.2s ease, background 0.2s ease;
 }
 
-/* MOBIL */
-@media only screen and (max-width: 600px) {
-    body {
-        background-image: url("background_phone.gif");
-    }
-
-    .footer-glass {
-        position: relative;   /* ❗ nem fixed */
-        font-size: 12px;
-        padding: 10px 0;
-    }
+.glass-btn:hover {
+    transform: scale(1.05);
+    background: rgba(0, 0, 0, 0.6);
 }
 
+/* Scanner video box */
 #scanner {
-    margin: 20px auto;
-    width: 90%;
-    max-width: 400px;
-
-    background: rgba(0, 0, 0, 0.4);
+    margin-top: 20px;
+    width: 400px;
+    display: none;
+    background: rgba(0,0,0,0.4);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 16px;
     padding: 10px;
 }
@@ -56,15 +52,44 @@ video {
     border-radius: 12px;
 }
 
-button {
-    display: block;
-    margin: 20px auto;
-    padding: 12px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 12px;
-    background: #0a84ff;
+/* Footer / glass */
+.footer-glass {
+    margin-top: auto;
+    width: 100%;
+    padding: 12px 0;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     color: white;
+    text-align: center;
+    font-size: 14px;
+    border-top: 1px solid rgba(255,255,255,0.2);
 }
 
+/* --------------------------
+   MOBIL / 600px alatti képernyő
+--------------------------- */
+@media only screen and (max-width: 600px) {
 
+    body {
+        background-image: url("background_phone.gif");
+        justify-content: center;
+        align-items: center;
+    }
+
+    .glass-btn {
+        font-size: 16px;
+        padding: 16px 32px;
+    }
+
+    #scanner {
+        width: 90%;
+        max-width: 320px;
+        padding: 8px;
+    }
+
+    .footer-glass {
+        font-size: 12px;
+        padding: 10px 0;
+    }
+}
