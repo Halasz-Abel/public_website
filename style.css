@@ -1,6 +1,6 @@
 body {
     margin: 0;                 /* eltávolítja az alapértelmezett margót */
-    height: 50vh;             /* teljes magasság a viewportnak */
+    height: 70vh;             /* teljes magasság a viewportnak */
     background-image: url("background_desktop.gif");  /* a kép útvonala */
     background-size: cover;       /* a kép kitölti az egész területet */
     background-position: center;  /* középre igazítás */
@@ -16,6 +16,7 @@ body {
         background-position: center;  /* középre igazítás */
         background-repeat: no-repeat;
     }
+
 
 
 
