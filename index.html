@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Az én weboldalam</title>
+    <title>QR Szkenner</title>
     <link rel="stylesheet" href="style.css">
+    <!-- jsQR könyvtár -->
+    <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.js"></script>
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </head>
-<footer class="footer-glass">
-    <p>© 2025 Halász Ábel • Minden jog fenntartva</p>
-</footer>
 <body>
-    <button id="startScan" class="glass-btn">QR kód beolvasása</button>
-    <h1 class="glass-text">Boldog Karácsonyt Mami!</h1>
+    <h1>2025 Halász Ábel</h1>
 
-    <div id="scanner" style="display:none;">
-        <video id="video" autoplay></video>
+    <div class="center-wrapper">
+        <button id="startScan" class="glass-btn">QR Szkennelés</button>
+        <div id="scanner" style="display:none;">
+            <video id="video" autoplay></video>
+        </div>
+        <div id="result"></div>
     </div>
 
-    <p id="result"></p>
+    <div class="footer-glass">
+        &copy; 2025 Halász Ábel – Minden jog fenntartva
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
