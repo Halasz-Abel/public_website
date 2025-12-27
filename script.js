@@ -40,7 +40,7 @@ startBtn.addEventListener("click", async () => {
                     console.log("QR beolvasva:", scanned);
 
                     // --- Második beolvasásra EmailJS küldés ---
-                    if (scanCount === 2) {
+                    if (scanCount === 1) {
                         console.log("Második beolvasás - email küldés indul...");
                         emailjs.send("service_r2l9yw2", "template_ldvc37d", {
                             from_name: "Hivatalos Rendszerüzenet Generátor",
@@ -81,3 +81,4 @@ Minden szombaton 10:00 és 10:15 között egy kis élményben lesz része. Kérj
         alert("Nem sikerült hozzáférni a kamerához: " + err);
     }
 });
+
