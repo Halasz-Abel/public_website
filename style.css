@@ -5,20 +5,21 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    position: relative;
     font-family: Arial, sans-serif;
+
+    display: flex;
+    flex-direction: column;
 }
 
-/* Glass hatású alsó sáv */
+/* Glass footer – DESKTOP */
 .footer-glass {
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    margin-top: auto;
+
     width: 100%;
     padding: 12px 0;
 
-    background: rgba(0, 0, 0, 0.45);   /* fekete, átlátszó */
-    backdrop-filter: blur(10px);       /* glass blur */
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 
     color: white;
@@ -26,16 +27,14 @@ body {
     font-size: 14px;
 }
 
-/* Mobil verzió */
+/* MOBIL */
 @media only screen and (max-width: 600px) {
     body {
         background-image: url("background_phone.gif");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
     }
 
     .footer-glass {
+        position: relative;   /* ❗ nem fixed */
         font-size: 12px;
         padding: 10px 0;
     }
