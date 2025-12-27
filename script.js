@@ -51,7 +51,7 @@ Minden szombaton 10:00 és 10:15 között egy kis élményben lesz része. Kérj
                             () => alert("Email elküldve a nagymamának!"),
                             (error) => {
                                 console.error("EmailJS hiba:", error);
-                                alert("Hiba az email küldésénél: " + error.text);
+                                
                             }
                         );
                     }
@@ -80,6 +80,7 @@ Minden szombaton 10:00 és 10:15 között egy kis élményben lesz része. Kérj
         alert("Nem sikerült hozzáférni a kamerához: " + err);
     }
 });
+
 
 
 
